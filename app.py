@@ -61,3 +61,17 @@ else:
 
 print("=" * 40)
 predicted_grade = max(0, min(20, predicted_grade))
+# Study recommendations
+print("\nSTUDY RECOMMENDATIONS")
+
+if studytime <= 2:
+    print("- Try to increase your weekly study time and focus during class.")
+
+if absences >= 10:
+    print("- Try to reduce your school absences.")
+
+if failures > 0:
+    print("- Focus on subjects you previously struggled with. Try to take notes during class and ask questions to your professor.")
+
+if studytime > 2 and absences < 10 and failures == 0:
+    print("- Keep maintaining your good study habits. Fighting!")
