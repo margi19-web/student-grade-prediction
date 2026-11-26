@@ -24,10 +24,15 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 print("\nTraining samples:", len(X_train))
 print("Testing samples:", len(X_test))
-from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 
-# Create the Linear Regression model
-model = LinearRegression()
+# Create a Random Forest model
+model = RandomForestRegressor(
+    n_estimators=300,  # Number of trees in the forest
+    min_samples_leaf=3,  # Minimum number of samples in each leaf
+    random_state=42,  # Make results reproducible
+    n_jobs=-1,  # Use all available CPU cores
+)
 
 # Train the model
 model.fit(X_train, y_train)
