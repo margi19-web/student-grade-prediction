@@ -75,3 +75,17 @@ if failures > 0:
 
 if studytime > 2 and absences < 10 and failures == 0:
     print("- Keep maintaining your good study habits. Fighting!")
+    # What-if study time simulator
+print("\nWHAT-IF STUDY SIMULATOR")
+print("Compare your predicted grade with different study times.")
+print("These are model estimates, not guaranteed outcomes.")
+
+for new_studytime in [1, 2, 3, 4]:
+
+    simulated_data = student_data.copy()
+    simulated_data["studytime"] = new_studytime
+
+    simulated_grade = model.predict(simulated_data)[0]
+    simulated_grade = max(0, min(20, simulated_grade))
+
+    print(f"Study time level {new_studytime}: {simulated_grade:.2f} / 20")
